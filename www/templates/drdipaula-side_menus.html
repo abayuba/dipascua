@@ -1,0 +1,48 @@
+<ion-side-menus enable-menu-with-back-views="false">
+	<ion-side-menu-content>
+		<ion-nav-bar ng-show="$root.headerExists" id="navbar-right-top" class="page-title bar-balanced">
+			<ion-nav-back-button></ion-nav-back-button>
+			<ion-nav-buttons side="left">
+				<button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+			</ion-nav-buttons>
+			<ion-nav-buttons side="right">
+				<button class="button button-icon button-clear ion-android-contacts" id="menu-popover" ng-click="popover.show($event)"></button>
+			</ion-nav-buttons>
+		</ion-nav-bar>
+		<ion-nav-view name="fabButtonUp"></ion-nav-view>
+		<ion-nav-view name="drdipaula-side_menus"></ion-nav-view>
+	</ion-side-menu-content>
+	<ion-side-menu side="left">
+		<ion-header-bar class="text-center expanded balanced-bg">
+			<img ng-src="data/images/images/LOGOhorizontal.png" class="avatar motion spin fade" />
+			<div class="menu-bottom">Clínica Di Pascua<br/></div>
+		</ion-header-bar>
+		<ion-content class="has-expanded-header light-bg balanced-900">
+			<ion-list class="list" >
+				<ion-item  class="menu-profesionales item-sidebar item item-icon-left text-left dark-ink" nav-clear="" menu-close="" ui-sref="drdipaula.profesionales">
+					<i class="icon ion-ribbon-a"></i> Profesionales
+				</ion-item>
+				<ion-item  class="menu-casos item-sidebar item item-icon-left text-left dark-ink" nav-clear="" menu-close="" ui-sref="drdipaula.casos">
+					<i class="icon ion-android-bulb"></i> Casos
+				</ion-item>
+				<ion-item  class="menu-videos item-sidebar item item-icon-left text-left dark-ink" nav-clear="" menu-close="" ui-sref="drdipaula.videos">
+					<i class="icon ion-social-youtube"></i> Videos
+				</ion-item>
+				<ion-item  class="menu-reservas item-sidebar item item-icon-left text-left dark-ink" nav-clear="" menu-close="" ui-sref="drdipaula.reservas">
+					<i class="icon ion-ios-book"></i> Reservas
+				</ion-item>
+				<ion-item  class="menu-noticias item-sidebar item item-icon-left text-left dark-ink" nav-clear="" menu-close="" ui-sref="drdipaula.noticias({categories:'1'})">
+					<i class="icon ion-plus-circled"></i> Noticias
+				</ion-item>
+				<ion-item  class="menu-especialidades item-sidebar item item-icon-left text-left dark-ink" nav-clear="" menu-close="" ui-sref="drdipaula.especialidades({categories:'8'})">
+					<i class="icon ion-android-checkbox-outline"></i> Especialidades
+				</ion-item>
+			
+				<ion-item  class="menu-google_map item-sidebar item item-icon-left text-left dark-ink" nav-clear="" menu-close="" ui-sref="drdipaula.google_map">
+					<i class="icon ion-android-globe"></i> Google Map
+				</ion-item>
+				
+			</ion-list>
+		</ion-content>
+	</ion-side-menu>
+</ion-side-menus>

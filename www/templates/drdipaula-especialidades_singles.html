@@ -1,0 +1,14 @@
+	<ion-view view-title="{{ especialidades.title.rendered }}" hide-nav-bar="false" >
+		<!-- content -->
+		<ion-content delegate-handle="top"   id="page-especialidades_singles" class="page-especialidades_singles">
+		
+			<ion-refresher pulling-text="Empuja hacia abajo para refrescar..."  on-refresh="doRefresh()"></ion-refresher>
+			<div class="list ">
+					<div class="item"  ng-bind-html="especialidades.title.rendered | to_trusted">{{especialidades.title.rendered}}</div>
+					<div class="item noborder"><img class="full-image" ng-src="{{especialidades.x_featured_media_original}}"  zoom-view="true" zoom-src="{{especialidades.x_featured_media_original}}"/></div>
+					<div class="item item-text-wrap noborder to_trusted" ng-bind-html="especialidades.content.rendered | strHTML"></div>
+			</div>
+
+		</ion-content>
+		<!-- ./content -->
+	</ion-view>

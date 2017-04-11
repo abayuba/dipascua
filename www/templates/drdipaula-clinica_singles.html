@@ -1,0 +1,12 @@
+	<ion-view view-title="Clinica Detail" hide-nav-bar="false" >
+		<!-- content -->
+		<ion-content delegate-handle="top"   id="page-clinica_singles" class="page-clinica_singles">
+		
+			<ion-refresher pulling-text="Pull to refresh..."  on-refresh="doRefresh()"></ion-refresher>
+			<div class="list ">
+					<div class="item noborder"><img class="full-image" ng-src="{{clinica.x_featured_media_original}}"  zoom-view="true" zoom-src="{{clinica.x_featured_media_original}}"/></div>
+			</div>
+
+		</ion-content>
+		<!-- ./content -->
+	</ion-view>

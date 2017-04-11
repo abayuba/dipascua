@@ -1,0 +1,25 @@
+	<ion-view view-title="La Clicnica" hide-nav-bar="false" >
+		<!-- content -->
+		<ion-content delegate-handle="top"  scroll="true"  overflow-scroll="true"   id="page-la_clicnica" class="fullscreen page-la_clicnica">
+		
+			<!-- code refresh -->
+			<ion-refresher pulling-text="Pull to refresh..."  on-refresh="doRefresh()"></ion-refresher>
+			<!-- ./code refresh -->
+			
+
+			<!-- code listing -->
+			<ion-slide-box show-pager="true" auto-play="true" pager-click="true" >
+					<ion-slide ng-repeat="item in clinicas | limitTo : 5:0" style="background: #999  url('{{item.x_featured_media}}')  no-repeat center center fixed;;background-size:cover;width:100%;height:100%;background-color:#ddd;" >
+						<div class="padding text-center light">
+							<div class="padding light dark-bg" style="opacity:0.8;margin-top:80px">
+								<a class="button button-colorful" ng-href="#/drdipaula/clinica_singles/{{item.id}}" >Readmore</a>
+							</div>
+						</div>
+					</ion-slide>
+			</ion-slide-box>
+			<!-- ./code listing -->
+
+
+		</ion-content>
+		<!-- ./content -->
+	</ion-view>

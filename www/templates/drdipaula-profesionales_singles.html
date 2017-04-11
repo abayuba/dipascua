@@ -1,0 +1,14 @@
+	<ion-view view-title="{{ profesionales.title.rendered }}" hide-nav-bar="false" >
+		<!-- content -->
+		<ion-content delegate-handle="top"   id="page-profesionales_singles" class="page-profesionales_singles">
+		
+			<ion-refresher pulling-text="Empuja hacia abajo para refrescar..."  on-refresh="doRefresh()"></ion-refresher>
+			<div class="list ">
+					<div class="item"  ng-bind-html="profesionales.title.rendered | to_trusted">{{profesionales.title.rendered}}</div>
+					<div class="item noborder"><img class="full-image" ng-src="{{profesionales.x_featured_media_original}}"  zoom-view="true" zoom-src="{{profesionales.x_featured_media_original}}"/></div>
+					<div class="item item-text-wrap noborder to_trusted" ng-bind-html="profesionales.content.rendered | strHTML"></div>
+			</div>
+
+		</ion-content>
+		<!-- ./content -->
+	</ion-view>

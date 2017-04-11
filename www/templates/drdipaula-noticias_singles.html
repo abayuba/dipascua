@@ -1,0 +1,25 @@
+	<ion-view view-title="{{ noticias.title.rendered }}" hide-nav-bar="false" >
+		<!-- content -->
+		<ion-content delegate-handle="top"   id="page-noticias_singles" class="page-noticias_singles">
+		
+			<ion-refresher pulling-text="Empuja hacia abajo para refrescar..."  on-refresh="doRefresh()"></ion-refresher>
+			<div class="list ">
+					<div class="item"  ng-bind-html="noticias.title.rendered | to_trusted">{{noticias.title.rendered}}</div>
+					<p class="padding pull-left" ><span class="icon ion-android-calendar"> {{noticias.x_date}}</span></p>
+					<div class="item noborder"><img class="full-image" ng-src="{{noticias.x_featured_media_original}}"  zoom-view="true" zoom-src="{{noticias.x_featured_media_original}}"/></div>
+					<div class="item item-text-wrap noborder to_trusted" ng-bind-html="noticias.content.rendered | strHTML"></div>
+					<div class="item">
+					<p>Compartir</p>
+					<div class="button-bar">
+						<button class="button button-small button-assertive icon ion-social-googleplus" ng-click="openURL('https://plus.google.com/share?url=' + noticias.link)"></button>
+						<button class="button button-small button-positive icon ion-social-facebook" ng-click="openURL('https://facebook.com/sharer/sharer.php?u=' + noticias.link)"></button>
+						<button class="button button-small button-calm icon ion-social-twitter" ng-click="openURL('https://twitter.com/share?url=' + noticias.link)"></button>
+						<button class="button button-small button-assertive-900 icon ion-social-pinterest" ng-click="openURL('https://pinterest.com/pin/create/bookmarklet/?&url=' + noticias.link)"></button>
+						<button class="button button-small button-positive-900 icon ion-social-linkedin" ng-click="openURL('https://www.linkedin.com/shareArticle?url=' + noticias.link)"></button>
+					</div>
+					</div>
+			</div>
+
+		</ion-content>
+		<!-- ./content -->
+	</ion-view>

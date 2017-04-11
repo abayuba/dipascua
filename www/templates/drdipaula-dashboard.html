@@ -1,0 +1,61 @@
+	<ion-view view-title="Clínica Di Pascua" hide-nav-bar="false" >
+		<!-- content -->
+		<ion-content delegate-handle="top"   id="page-dashboard" class=" page-dashboard">
+				<!-- code slide hero -->
+		<div class="assertive-900-bg slide-box-hero" ng-controller="noticiasCtrl">
+			<ion-slides class="slide-box-hero-content" options="{slidesPerView:1}" slider="data.slider">
+				<ion-slide-page class="slide-box-hero-item" ng-repeat="item in data_noticiass | limitTo : 10:0" >
+					<img ng-src="{{item.x_featured_media_original}}" alt="" />
+				</ion-slide-page>
+			</ion-slides>
+		</div>
+		<!-- ./code slide hero -->
+
+
+
+		<!-- code slide avatar -->
+		<a ng-href="#/drdipaula/profesionales" class="slide-box-title calm-900-bg">Profesionales <i class="pull-right icon ion-chevron-right"></i></a>
+		<div class="calm-900-bg slide-box-avatar" ng-controller="profesionalesCtrl" >
+		<ion-slides class="slide-box-avatar-content" ng-if="data_profesionaless" options="{slidesPerView:grid80}" slider="data.slider" show-pager="false">
+			<ion-slide-page class="slide-box-avatar-item" ng-repeat="item in data_profesionaless | limitTo : 16:0" >
+				<a ng-href="#/drdipaula/profesionales_singles/{{item.id}}"><img class="avatar" ng-src="{{item.x_featured_media_original}}" alt="" /></a>
+			</ion-slide-page>
+		</ion-slides>
+		</div>
+		<!-- ./code slide avatar -->
+
+
+	<div ng-controller="casosCtrl">
+			<!-- code listing -->
+			<div class="list animate-fade-slide-in-right">
+				<div class="list card" ng-repeat="item in casoss | filter:filter_casoss as results" ng-init="$last ? fireEvent() : null" href="#/drdipaula/casos_singles/{{item.id}}" >
+					<div class="item item-balanced-900"  ng-bind-html="item.title.rendered | to_trusted"></div>
+					<div class="item item-thumbnail-left item-text-wrap">
+						<img alt="" class="full-image" ng-src="{{item.x_featured_media}}" />
+						<div class="to_trusted" ng-bind-html="item.content.rendered | to_trusted"></div>
+				</div>
+					<a class="item button button-clear balanced-900 ink" href="#/drdipaula/casos_singles/{{item.id}}">Ver Caso</a>
+				</div>
+			</div>
+			<!-- ./code listing -->
+			<!-- code infinite scroll -->
+			<ion-list class="list">
+				<ion-infinite-scroll ng-if="!noMoreItemsAvailable" on-infinite="onInfinite()" distance="5px" ng-if="hasMoreData"></ion-infinite-scroll>
+			</ion-list>
+			<!-- ./code infinite scroll -->
+
+
+			<!-- code search result not found -->
+			<ion-list class="list">
+				<div class="item" ng-if="results.length == 0" >
+					<p>Sin resultados</p>
+				</div>
+			</ion-list>
+			<!-- code search result not found -->
+
+
+	</div>
+
+		</ion-content>
+		<!-- ./content -->
+	</ion-view>
